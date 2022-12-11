@@ -14,12 +14,11 @@ export default function Home() {
     getCurrentWeather();
     setCurrentLocation(location);
     setLocation("");
-    console.log(process.env.NEXT_PUBLIC_WEATHER_API_KEY);
   };
 
   const getLatLon = async () => {
     const response = await axios.get(
-      "http://api.openweathermap.org/geo/1.0/direct",
+      "https://api.openweathermap.org/geo/1.0/direct",
       {
         params: { appid: process.env.NEXT_PUBLIC_WEATHER_API_KEY, q: location },
       }
